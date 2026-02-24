@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "titanic-ml-classification"
+version = "0.1.0"
+description = "Binary classification on Titanic dataset using Random Forest"
+authors = [
+    { name = "Yassine KHERBOUCHE", email = "yassinekherbouche88@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "pandas==2.1.0",
+    "numpy==1.24.0",
+    "scikit-learn==1.3.0",
+    "matplotlib==3.7.0",
+    "seaborn==0.12.0",
+    "joblib==1.3.0",
+    "jupyter==1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.4.0",
+    "black==23.7.0",
+    "ruff==0.0.287",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W"]
